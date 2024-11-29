@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Podcast Name</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800');
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background-image: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #a1c4fd, #c2e9fb, #d4fc79, #96e6a1);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 6s ease infinite;
+            position: relative;
+            font-family: 'Host Grotesk', sans-serif;
+        }
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            text-decoration: none;
+            color: white;
+            background-color: #0073e6;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #005bb5;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: #555;
+        }
+        .sparkle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: gold;
+            border-radius: 50%;
+            animation: sparkle 3s linear infinite;
+        }
+        @keyframes sparkle {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-200px) scale(0.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Bio Textbook: The Podcast!</h1>
+    
+    <div class="buttons">
+        <a href="https://open.spotify.com/show/2P8LcTawmsJgYaBzM4yPaI" class="button" target="_blank">Listen on Spotify</a>
+        <a href="podcast://anchor.fm/s/fe40a1d8/podcast/rss" class="button" target="_blank">Listen on Apple Podcasts</a>
+    </div>
+
+    <div class="footer">
+        <p>For UTS Bio (Straz and Niño)</p>
+    </div>
+
+    <script>
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            document.body.appendChild(sparkle);
+
+            const x = Math.random() * window.innerWidth;
+            const y = window.innerHeight;
+            sparkle.style.left = `${x}px`;
+            sparkle.style.top = `${y}px`;
+
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+
+        setInterval(createSparkle, 100);
+    </script>
+</body>
+</html>
